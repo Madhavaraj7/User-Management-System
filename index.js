@@ -5,13 +5,13 @@ const nocache = require("nocache");
 
 // require express
 const express = require("express");
-const app = express();
+const app = express() ;
 
 //using nocache
 app.use(nocache());
 
 
-//for user routes
+//for user routes 
 const user_route = require("./routes/userRoute");
 app.use("/", user_route);
 
