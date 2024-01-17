@@ -177,22 +177,12 @@ form
         <form action="/register" method="post">
           <input type="text" name="name" placeholder="Full name" required />
           <input type="text" name="email" placeholder="Email address" required />
-          <input type="text" name="mobile" placeholder="Enter Number" required />
+          <input type="text" name="mobile" placeholder="Enter Phone Number" required />
           <input type="password" name="password" placeholder="Password" required />
           <div class="checkbox">
             <input type="checkbox" id="signupCheck" />
             <label for="signupCheck">I accept all terms & conditions</label>
           </div>
-          <% if(message){ %>
-
-            <p style="color: rgb(9, 255, 9)"><%= message %></p>
-            <p>
-              <a class="d-flex justify-content-center text-light" href="/login"
-                >login here</a
-              >
-            </p>
-  
-            <% } %>
           <input type="submit" value="Signup" />
         </form>
       </div>

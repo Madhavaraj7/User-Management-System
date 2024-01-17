@@ -15,6 +15,10 @@ app.use(nocache());
 const user_route = require("./routes/userRoute");
 app.use("/", user_route);
 
+//for admin route
+const adminRoute = require("./routes/adminRoute");
+app.use("/admin", adminRoute);
+
 
 //listen to port 3000
 app.listen(3000,()=>{

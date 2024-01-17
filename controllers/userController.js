@@ -39,9 +39,7 @@ const insertUser = async (req, res) => {
     const userData = await user.save(); //saving data to mongo db
 
     if (userData) {
-      res.render("registration", {
-        message: "Your registration is successful.",
-      });
+      res.render("login",{ message: "Your registration has Sucessfully Please login!"});
     } else {
       res.render("registration", { message: "Your registration has failed." });
     }
