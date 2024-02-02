@@ -1,6 +1,8 @@
 //require mongoose
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://127.0.0.1:27017/user_management_system");
+mongoose.connect("mongodb://127.0.0.1:27017/user_management_system").then(()=>{
+    console.log("connected")
+});
 const nocache = require("nocache");
 
 // require express

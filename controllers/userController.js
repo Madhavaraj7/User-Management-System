@@ -1,6 +1,7 @@
 //requiring model file
 const User = require("../models/userModel");
 
+
 //requiring bcrypt
 const bcrypt = require("bcrypt");
 
@@ -18,7 +19,11 @@ const securePassword = async (password) => {
 
 const loadRegister = async (req, res) => {
   try {
-    res.render("registration", { message: null });
+    res.render("registration", { 
+      userExist: req.session.userExist,
+     }
+     );
+     req.session.userExist = false;
   } catch (error) {
     console.log(error.message);
   }
@@ -37,13 +42,15 @@ const insertUser = async (req, res) => {
 
     //returning a promise
     const userData = await user.save(); //saving data to mongo db
+  
+
 
     if (userData) {
       res.render("login",{ message: "Your registration has Sucessfully Please login!"});
     } else {
       res.render("registration", { message: "Your registration has failed." });
     }
-  } catch (error) {
+  }catch (error) {
     console.log(error.message);
   }
 };

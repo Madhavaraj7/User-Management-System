@@ -19,8 +19,6 @@ const isLogin = async(req,res,next)=>{
       if (req.session.user_id) {
         res.redirect('/admin/home');
       } 
-  
-  
       next();
   
     } catch (error) {

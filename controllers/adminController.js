@@ -68,6 +68,7 @@ const verifyLogin = async (req,res)=>{
 }
 
 
+
 //dashboard
 const loadHome = async (req,res)=>{
   try {
@@ -105,8 +106,8 @@ const admDashboard = async(req,res)=>{
   }
   const fullUserdata = await User.find({is_admin:0,
   $or:[
-    {name:{$regex:'.*'+search+'.*',$options:'i'}},
-    {email:{$regex:'.*'+search+'.*',$options:'i'}}
+    {name:{$regex:search,$options:'i'}},
+    {email:{$regex:search,$options:'i'}}
     // {mobile:{$regex:'.*'+search+'.*',$options:'i'}},
 
   ]
