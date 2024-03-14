@@ -223,5 +223,4 @@ module.exports = {
   editUserload,
   updateUsers,
   deleteUser
-
 }
